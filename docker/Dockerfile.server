@@ -22,7 +22,7 @@ RUN yum install -y epel-release && \
 
 COPY --from=base /usr/local/bin/etserver /usr/local/bin/etterminal /usr/local/bin/htm /usr/local/bin/htmd  /usr/local/bin/
 COPY --from=base /EternalTerminal/etc/et.cfg /etc/et.cfg
-COPY container-entrypoint /bin/container-entrypoint
+COPY --from=base /EternalTerminal/docker/container-entrypoint /bin/container-entrypoint
 
 EXPOSE 2022 2222
 
